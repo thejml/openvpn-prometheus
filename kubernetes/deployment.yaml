@@ -23,8 +23,8 @@ spec:
       serviceAccountName: openvpn-exporter
       securityContext:
         runAsNonRoot: true
-        runAsUser: 1000
-        fsGroup: 1000
+        runAsUser: 1026
+        fsGroup: 100
       
       containers:
       - name: openvpn-exporter
