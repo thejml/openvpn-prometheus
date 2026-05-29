@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: openvpn-exporter
-  namespace: default
+  namespace: openvpn-exporter
   labels:
     app: openvpn-exporter
     version: v1

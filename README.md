@@ -132,15 +132,6 @@ ENV OPENVPN_STATUS_FILE=/var/log/openvpn/openvpn-status.log
 CMD ["openvpn-exporter"]
 ```
 
-## Differences from Bash Version
-
-- Runs as a persistent HTTP server instead of a one-shot script
-- Metrics collected on each request to `/metrics`
-- No textfile collector support (direct HTTP endpoints instead)
-- No cron job installation (run with systemd, Docker, or your container orchestrator)
-- Better performance and resource efficiency
-- Direct integration with Prometheus scraping
-
 ## License
 
 MIT
