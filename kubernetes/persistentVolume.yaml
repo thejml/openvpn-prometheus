@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: openvpn-status-pv
+  labels:
+    app: openvpn-exporter
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /volume1/Storage/Data/Telegraf/
+    server: kanzaki.thejml.info
+    readOnly: false
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: openvpn-status-pvc
+  namespace: default
+  labels:
+    app: openvpn-exporter
+spec:
+  storageClassName: ""
+  volumeName: openvpn-status-pv
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 100Mi       
